@@ -427,7 +427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceleration: 1
   maxSpeed: 5
-  jumpForce: 100
+  jumpForce: 800
   jump: 0
   groundCheck: {fileID: 4057668991359208}
 --- !u!114 &114527791310823388

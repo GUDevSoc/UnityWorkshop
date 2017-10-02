@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 212666874074956772}
   - component: {fileID: 114477565032650758}
   - component: {fileID: 50538899061378246}
-  - component: {fileID: 114544287575411632}
   - component: {fileID: 58585918745494874}
-  m_Layer: 0
+  - component: {fileID: 114972727190829302}
+  m_Layer: 9
   m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -90,12 +90,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b3b68dda368e4d1abf7688fb3a26375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attractedTo: {fileID: 1023843427084912, guid: c98b5f359484a4c9fa21426892632bd0,
-    type: 2}
   strengthOfAttraction: 10
-  radius: 5
+  radius: 1.5
   maxSpeed: 10
---- !u!114 &114544287575411632
+--- !u!114 &114972727190829302
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -103,7 +101,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1491373708447960}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dda3ca6267ec24069bdda038daecdcfb, type: 3}
+  m_Script: {fileID: 11500000, guid: ac73062ea181246a5aa98bcd22ad3dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212666874074956772

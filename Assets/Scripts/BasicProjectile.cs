@@ -10,12 +10,14 @@ public class BasicProjectile : MonoBehaviour {
 	void Awake(){
 		rb2d = GetComponent<Rigidbody2D> ();
 		GetComponent<SpriteRenderer> ().color = GetComponentInParent<SpriteRenderer> ().color;
+		gameObject.layer = 0;
 	}
 
 	// Use this for initialization
 	void Start () {
-		Debug.Log (transform.parent.GetComponent<PlayerFire> ().shootForce);
-		rb2d.AddRelativeForce (new Vector2 (transform.parent.GetComponent<PlayerFire> ().shootForce, 0));
+		rb2d.AddRelativeForce (new Vector2 (transform.parent.GetComponent<PlayerFire> ().shootForce 
+												+ transform.parent.GetComponentInParent<Rigidbody2D>().velocity.x, 
+											transform.parent.GetComponentInParent<Rigidbody2D>().velocity.y));
 		transform.parent = null;
 	}
 	

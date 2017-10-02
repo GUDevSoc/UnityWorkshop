@@ -2,18 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collectable : MonoBehaviour {
+public abstract class Pickup : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision){
 
 		if (collision.gameObject.transform.name == "Player"){
-			CollectableBehaviour (collision);
+			CollectableBehaviour (collision.gameObject);
 			Destroy (gameObject);
 		}
 			
 	}
 
-	void CollectableBehaviour(Collision2D collision){
-		collision.gameObject.GetComponent<ScoreTracker> ().score++;
-	}
+	protected abstract void CollectableBehaviour (GameObject player);
 }

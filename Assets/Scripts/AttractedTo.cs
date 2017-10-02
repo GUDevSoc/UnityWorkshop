@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class AttractedTo : MonoBehaviour {
 
-	private Transform attractedTo;
-	public float strengthOfAttraction = 100;
-	public float radius = 10;
+	public float strengthOfAttraction = 10;
+	public float radius = 1.5f;
 	public float maxSpeed = 10;
 
 	private Rigidbody2D rb2d;
+	private Transform attractedTo;
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +21,7 @@ public class AttractedTo : MonoBehaviour {
 	void FixedUpdate () {
 		//get the offset between the objects
 		Vector2 offset = (Vector2) (attractedTo.position - transform.position);
-		Debug.DrawLine (attractedTo.position, transform.position);
+
 		if (offset.magnitude <= radius) {
 			Vector2 vel = rb2d.velocity;
 			vel += offset;

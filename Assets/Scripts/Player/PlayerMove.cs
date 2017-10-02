@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour {
 	public float acceleration = 1f;
 	public float maxSpeed = 5f;
 
-	public float jumpForce = 100f;
+	public float jumpForce = 800f;
 	[HideInInspector] public bool jump = false;
 	public Transform groundCheck;
 
