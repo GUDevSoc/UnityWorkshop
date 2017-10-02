@@ -23,7 +23,7 @@ public class PlayerFire : MonoBehaviour {
 		if (mouseClick && shootTimer <= 0 && shootSpeed >= 0) {
 			shootTimer = 1 / shootSpeed;
 			GameObject proj = (GameObject) Instantiate (projectile, transform.position, transform.rotation, transform);
-			proj.GetComponent<BasicProjectile> ().shootForce = shootForce * ;
+			proj.GetComponent<BasicProjectile> ().shootForce = shootForce;
 		}
 
 		if (shootTimer > 0) {
