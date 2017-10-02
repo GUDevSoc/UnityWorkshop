@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50627608118017936}
   - component: {fileID: 61794609326211048}
   - component: {fileID: 114651054848990254}
+  - component: {fileID: 114210801477296144}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -88,6 +89,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.34281707, y: 0.13283443}
   m_EdgeRadius: 0
+--- !u!114 &114210801477296144
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1921427400939622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e36788f12168c9c48af6992866540582, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 50
+  team: 1
 --- !u!114 &114651054848990254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -100,6 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1620482321001864, guid: 1cd742fbd22e1427c9ea5a239b69662b, type: 2}
+  shootForce: 0
 --- !u!212 &212819813421526294
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -140,5 +155,3 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.03}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0

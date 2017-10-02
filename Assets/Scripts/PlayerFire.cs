@@ -12,16 +12,18 @@ public class PlayerFire : MonoBehaviour {
 	private float shootTimer = 0;
 
 	// Use this for initialization
-	void Start () {
+	void Awake(){
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		mouseClick = Input.GetMouseButtonDown (0);
+		mouseClick = Input.GetButton ("Fire1");
 
 		if (mouseClick && shootTimer <= 0 && shootSpeed >= 0) {
 			shootTimer = 1 / shootSpeed;
-			Instantiate (projectile, transform.position, transform.rotation, transform);
+			GameObject proj = (GameObject) Instantiate (projectile, transform.position, transform.rotation, transform);
+			proj.GetComponent<BasicProjectile> ().shootForce = shootForce * ;
 		}
 
 		if (shootTimer > 0) {

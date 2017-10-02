@@ -10,9 +10,10 @@ public class EnemyBehaviour : MonoBehaviour {
 	private int groundmask;
 	private bool grounded, onEdge;
 	Transform EdgeCheck, GroundCheck;
+	Health health;
 
 	[SerializeField]
-	float speed;
+	float speed = 20;
 
 	// Use this for initialization
 	void Awake () {
@@ -21,25 +22,35 @@ public class EnemyBehaviour : MonoBehaviour {
 
 		EdgeCheck = transform.Find ("EdgeCheck");
 		GroundCheck = transform.Find ("GroundCheck");
+		health = GetComponent<Health> ();
 
 
 	}
 
 	// Update is called once per frame
 	void Update () {
+
+		if (health.isDead)
+			Destroy (gameObject);
+		//check if on ground
 		grounded = Physics2D.OverlapCircle (GroundCheck.position,
 			GroundCheck.GetComponent<CircleCollider2D> ().radius, 
 			groundmask);
 
+		//check if front is over edge of stage
 		onEdge = Physics2D.OverlapCircle (EdgeCheck.position,
 			EdgeCheck.GetComponent<CircleCollider2D> ().radius, 
 			groundmask);
 
 
-		if (grounded && !onEdge)
+		if (grounded && !onEdge) { //if off edge, flip
 			transform.localScale = new Vector3 (transform.localScale.x * -1, 
 				transform.localScale.y, 
 				transform.localScale.z);
+			
+			speed *= -1;
+
+		}
 
 
 
@@ -47,6 +58,6 @@ public class EnemyBehaviour : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-
+		rb2D.velocity = Vector2.right * speed;
 	}
 }
